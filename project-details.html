@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Project Details - Anmol Joshi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<style>
+			html { scroll-behavior: smooth; }
+			body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, .button { font-family: 'Poppins', sans-serif !important; }
+			:root {
+				--bg-dark: #0a1128; --bg-card: #162447; --text-main: #d3d9e9; --text-heading: #ffffff;
+				--accent: #00d2ff; --accent-hover: #3a86ff;
+			}
+			body, #wrapper { background-color: var(--bg-dark) !important; color: var(--text-main) !important; }
+			h1, h2, h3, h4, h5, h6, strong { color: var(--text-heading) !important; }
+			a { color: var(--accent) !important; text-decoration: none !important; border-bottom: none !important; transition: all 0.3s ease; }
+			a:hover { color: var(--accent-hover) !important; }
+			.button { border-radius: 30px !important; border: 2px solid var(--accent) !important; color: var(--accent) !important; box-shadow: none !important; font-size: 0.85rem !important; font-weight: 500 !important;}
+			.button:hover { background-color: var(--accent) !important; color: var(--bg-dark) !important; }
+            
+            /* Desktop Navigation */
+            #nav { background-color: #121e3c !important; border-top: 1px solid rgba(0, 210, 255, 0.2) !important; border-bottom: 1px solid rgba(0, 210, 255, 0.2) !important; }
+            #nav ul.links li a { font-size: 0.85rem !important; font-weight: 500; letter-spacing: 1.5px; padding: 0 1.5rem !important; }
+            #nav ul.links li.active a { background-color: rgba(0, 210, 255, 0.1) !important; color: var(--accent) !important; }
+            
+            /* 🚀 FIX: Force Nav Bar to stay visible on Half-Screen / Tablet 🚀 */
+            @media screen and (min-width: 650px) {
+                #nav { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+                a[href="#navPanel"] { display: none !important; } /* Hides Hamburger menu icon on half screens */
+            }
+
+            /* Mobile Nav Panel Fixes (Only for very small phones) */
+            @media screen and (max-width: 649px) {
+                a[href="#navPanel"] { color: #ffffff !important; }
+                a[href="#navPanel"]:before { color: #ffffff !important; } /* Makes hamburger icon white */
+                #navPanel { background-color: var(--bg-dark) !important; }
+                #navPanel .link { color: var(--text-heading) !important; }
+                #navPanel .link.active { color: var(--accent) !important; }
+            }
+            
+			#main { background-color: transparent !important; }
+			.post { background-color: var(--bg-card) !important; border-radius: 16px !important; box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important; padding: 3rem !important; margin-top: 2rem;}
+			
+			/* Content formatting inside detail page */
+			.project-content h3 { color: var(--accent) !important; margin-top: 2rem; margin-bottom: 1rem; }
+			.project-content p, .project-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-main); }
+			.project-content ul { padding-left: 2rem; margin-bottom: 2rem; }
+			.project-image { width: 100%; border-radius: 12px; margin-bottom: 2rem; border: 1px solid rgba(0, 210, 255, 0.2); }
+
+            header .date::before, header .date::after {
+                display: none !important;
+            }
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper" class="fade-in">
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home (Profile & Exp)</a></li>
+					<li class="active"><a href="projects.html">Portfolio (Projects & Apps)</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+            
+				<article class="post">
+					<header class="major" style="text-align: center; margin-bottom: 3rem;">
+						<span class="date" style="color: var(--accent); font-weight: 600; letter-spacing: 2px;">MySQL & PowerBI</span>
+						<h1 style="margin-top: 0.5rem;">Ola Bookings Analysis</h1>
+					</header>
+					
+					<div class="project-content">
+						<img src="images/Ola_image.png" alt="Ola Project" class="project-image" />
+						
+						<h3>About The Project</h3>
+						<p>This project involves generating a synthetic dataset of 100,000 ride-booking records for Bengaluru, analyzing booking trends, cancellations, and ride performance using SQL and Power BI.</p>
+						
+						<h3>Key Insights Extracted</h3>
+						<ul>
+							<li>Analyzed ride volume and peak booking times to optimize fleet deployment.</li>
+							<li>Evaluated revenue trends and identified major factors contributing to ride cancellations.</li>
+							<li>Mapped customer behavior and driver rating distributions to support data-driven decision-making.</li>
+						</ul>
+					</div>
+
+					<ul class="actions special" style="margin-top: 3rem;">
+						<li><a href="index.html" class="button">Back to Home</a></li>
+						<li><a href="projects.html" class="button">Back to Portfolio</a></li>
+						<li><a href="https://github.com/Anmoljoshi19/Ola_Bookings_Analysis" target="_blank" class="button">View Source Code (GitHub)</a></li>
+					</ul>
+				</article>
+
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section class="split contact">
+					<section class="alt"><h3>Location</h3><p>Indore, MP, India</p></section>
+					<section><h3>Email</h3><p><a href="mailto:anmoljoshi.contact@gmail.com">anmoljoshi.contact@gmail.com</a></p></section>
+				</section>
+			</footer>
+		</div>
+		
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

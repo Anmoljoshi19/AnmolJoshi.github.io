@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Anmol Joshi - Profile & Experience</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <style>
+            html { scroll-behavior: smooth; }
+            body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, .button { font-family: 'Poppins', sans-serif !important; }
+            :root {
+                --bg-dark: #0a1128; --bg-card: #162447; --text-main: #d3d9e9; --text-heading: #ffffff;
+                --accent: #00d2ff; --accent-hover: #3a86ff;
+            }
+            body, #wrapper { background-color: var(--bg-dark) !important; color: var(--text-main) !important; }
+            #intro { background-color: rgba(10, 17, 40, 0.8) !important; }
+            h1, h2, h3, h4, h5, h6, strong { color: var(--text-heading) !important; }
+            a { color: var(--accent) !important; text-decoration: none !important; border-bottom: none !important; transition: all 0.3s ease; }
+            a:hover { color: var(--accent-hover) !important; }
+            
+            /* Sleeker Buttons */
+            .button { border-radius: 30px !important; border: 2px solid var(--accent) !important; color: var(--accent) !important; box-shadow: none !important; font-size: 0.85rem !important; font-weight: 500 !important; }
+            .button:hover { background-color: var(--accent) !important; color: var(--bg-dark) !important; border-color: var(--accent) !important; box-shadow: 0 0 15px rgba(0, 210, 255, 0.4) !important; }
+            
+            /* Desktop Navigation */
+            #nav { background-color: #121e3c !important; border-top: 1px solid rgba(0, 210, 255, 0.2) !important; border-bottom: 1px solid rgba(0, 210, 255, 0.2) !important; }
+            #nav ul.links li a { font-size: 0.85rem !important; font-weight: 500; letter-spacing: 1.5px; padding: 0 1.5rem !important; }
+            #nav ul.links li.active a { background-color: rgba(0, 210, 255, 0.1) !important; color: var(--accent) !important; }
+            
+            /* 🚀 FIX: Force Nav Bar to stay visible on Half-Screen / Tablet 🚀 */
+            @media screen and (min-width: 650px) {
+                #nav { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+                a[href="#navPanel"] { display: none !important; } /* Hides Hamburger menu icon on half screens */
+            }
+
+            /* Mobile Nav Panel Fixes (Only for very small phones) */
+            @media screen and (max-width: 649px) {
+                a[href="#navPanel"] { color: #ffffff !important; }
+                a[href="#navPanel"]:before { color: #ffffff !important; } /* Makes hamburger icon white */
+                #navPanel { background-color: var(--bg-dark) !important; }
+                #navPanel .link { color: var(--text-heading) !important; }
+                #navPanel .link.active { color: var(--accent) !important; }
+            }
+
+            #main { background-color: transparent !important; }
+            
+            /* Card Layout */
+            #main > section, .post { background-color: var(--bg-card) !important; border-radius: 16px !important; box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important; border: 1px solid rgba(255,255,255,0.05) !important; margin-bottom: 3rem !important; padding: 3rem !important; }
+            .section-header { border-bottom: 2px solid rgba(0, 210, 255, 0.2); margin-bottom: 2.5rem; padding-bottom: 1rem; text-align: center; }
+            
+            /* Responsive Adjustments for Mobile */
+            @media screen and (max-width: 768px) {
+                #main > section, .post { padding: 1.5rem !important; } 
+                .timeline { padding-left: 1rem !important; margin-left: 0.5rem !important; }
+                .timeline-item::before { left: -1.35rem !important; width: 12px !important; height: 12px !important; }
+                #intro h1 { font-size: 3.5rem !important; line-height: 1.2 !important; }
+                .skill-tags { gap: 0.5rem; }
+                .skill-tag { padding: 0.4rem 1rem; font-size: 0.8rem; }
+            }
+
+            .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; justify-content: center;}
+            .skill-tag { background: rgba(0, 210, 255, 0.05); color: var(--accent); padding: 0.5rem 1.5rem; border-radius: 30px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--accent); transition: all 0.3s ease; letter-spacing: 1px; }
+            .skill-tag:hover { background: var(--accent); color: var(--bg-dark); box-shadow: 0 0 10px rgba(0, 210, 255, 0.5); }
+            
+            .timeline { border-left: 2px solid var(--accent); padding-left: 2rem; margin-left: 1rem; margin-top: 2rem; }
+            .timeline-item { margin-bottom: 3rem; position: relative; text-align: left; }
+            .timeline-item::before { content: ''; position: absolute; left: -2.45rem; top: 0.3rem; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px var(--bg-card); }
+            .timeline-date { font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+            .timeline-item h4 { font-weight: 400; color: #a0aec0 !important; margin-bottom: 1rem; font-size: 1.1rem; }
+            .timeline-item ul { margin-left: 1rem; font-size: 0.95rem; }
+            .timeline-item ul li { margin-bottom: 0.8rem; }
+            
+            #footer { background-color: #121e3c !important; }
+            #footer .contact section { border-color: rgba(255,255,255,0.05) !important; }
+        </style>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper" class="fade-in">
+
+            <!-- Intro -->
+            <div id="intro">
+                <h1>ANMOL JOSHI</h1>
+                <p style="color: var(--accent); font-weight: 500; letter-spacing: 2px; text-transform: uppercase;">Data Analytics | Process Automation | Digitalization</p>
+                <p>Transforming complex operational data into actionable insights and building automated systems that drive efficiency.</p>  
+                <ul class="actions">
+                    <li><a href="#about" class="button icon solid solo fa-arrow-down scrolly">Explore Profile</a></li>
+                </ul>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul class="links">
+                    <li class="active"><a href="index.html">Home (Profile & Exp)</a></li>
+                    <li><a href="projects.html">Portfolio (Projects & Apps)</a></li>
+                </ul>
+                <ul class="icons">
+                    <li><a href="http://www.linkedin.com/in/anmolj19" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/Anmoljoshi19" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Main -->
+            <div id="main">
+                <!-- ABOUT ME SECTION -->
+                <section id="about" class="post">
+                    <header class="section-header">
+                        <h2>About Me</h2>
+                    </header>
+                    <div class="about-flex" style="text-align: center;">
+                        <p>I am a data enthusiast and operations specialist based in Indore. My career is built at the intersection of mechanical processes and digital transformation. I have a deep passion for optimizing workflows whether that means improving production line analytics, managing premium automotive service operations, or building custom "Mini-ERPs" from scratch.</p>
+                        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent) !important; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Tech Stack & Core Skills</h3>
+                        <div class="skill-tags">
+                            
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Advanced Excel</span>
+                            <span class="skill-tag">Google Apps Script</span>
+                            <span class="skill-tag">Process Automation</span>
+                            <span class="skill-tag">MySQL</span>
+							<span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Business Analytics & Intelligence</span>
+                            <span class="skill-tag">Operations Management</span>
+                            <span class="skill-tag">Inventory & Supply Chain Management</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WORK EXPERIENCE SECTION -->
+                <section id="experience" class="post">
+                    <header class="section-header">
+                        <h2>Work Experience</h2>
+                    </header>
+                    
+                    <div class="timeline">
+                        <!-- BMW Motorrad -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">May 2025 - Present</span>
+                            <h3>Workshop Manager</h3>
+                            <h4>BMW Motorrad (Munich Motors) • Indore, India</h4>
+                            <ul style="color: var(--text-main);">
+                                <li>Increased overall parts and labor revenue by 19% within the first six months of joining by identifying and resolving operational bottlenecks. Recognized a lack of proper upselling and staff awareness regarding Value Added Services such as PPF, detailing, and ceramic coating. Coordinated directly with vendors to create structured service packages and trained the staff on exactly how to pitch these services to specific customers to drive extra revenue. Additionally, trained advisors on cross-selling relevant products and services alongside routine repairs, leading to a direct increase in overall revenue.</li>
+								<li>Resolved a major issue of non-existent data and poor documentation at the dealership by scraping legacy data from the Dealer Management System and building a comprehensive database in Google Sheets. Extracted unique VINs for all motorcycles sold since the dealership opened, as well as every bike serviced to date, to compile detailed customer service histories. Trained Customer Relationship Executives on how to effectively approach and invite these customers. Conducted a market mapping exercise which revealed that only 72% of the initially sold bikes were still in our active territory (accounting for out-of-state relocations, resales, and total losses), while also identifying out-of-state bikes currently residing in our market. This data-driven targeting allowed us to focus our efforts exactly where needed, successfully increasing our service retention rate from 36% to 57%.</li>
+								<li>Extracted four years of historical DMS data to establish revenue baselines, compare YoY growth, and determine the pace needed for future scaling. Previously, the team struggled to plan for BMW-assigned KPIs because they relied on manual weekly calculations. To solve this, I engineered an internal tracking website and dashboard on the Streamlit platform, developed using Python, Google Sheets, Google Apps Script, and AI tools. This system provides management and the team with live updates on workshop check-ins and revenue forecasts. It includes an internal CRM portal for appointment punch-ins, tracking pending services, forecasting the pipeline for the next 1-2 months, and identifying lapsed customers for targeted promotional offers. It also features a daily KPI tracker to monitor the exact business volume required to achieve targets and strategies.</li>
+								<li>Developed a custom in-house application leveraging Python, Google Sheets, Google Apps Script, and AI tools to completely digitize the Job Card opening process. Service Advisors can now input a VIN on the spot to instantly retrieve the bike’s complete service history. The app allows precise documentation of vehicle issues and pre-existing aftermarket accessories, supported by photographic evidence. Upon generating the job card, the system automatically triggers an email to the customer for digital approval before any work commences. This initiative drastically increased transparency between the customer and the workshop while securing proper documentation to prevent any future escalations.</li>
+								<li>Successfully reduced dead stock inventory value from ₹49,00,000 to ₹34,00,000 within 9 months by proactively networking with other regional dealers, understanding their demands, and executing targeted dealer-to-dealer stock transfers. Furthermore, I analyzed the retail demand for actively selling parts to optimize ordering quantities and transitioned very slow-moving inventory to a strict, need-based ordering model to avoid unnecessary holding in the inventory.</li>
+                            </ul>
+                        </div>
+
+                        <!-- CNHI 1 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">November 2023 - August 2024</span>
+                            <h3>Testing & Finishing Engineer</h3>
+                            <h4>Case New Holland (CNHI) • Pithampur, India</h4>
+                            <ul style="color: var(--text-main);">
+                                <li>Established a completely new Testing & Finishing facility from the ground up for the launch of Skid Steer Loaders in the Indian market. Closely collaborated with the USA-based manufacturing facility to study and adapt their testing parameters for the local plant. Coordinated with Manufacturing Engineering and Quality Control teams to design station layouts meeting strict industry standards. Strategically re-designed the testing sequence based on local facility constraints and production schedules to extract maximum operational efficiency.</li>
+                                <li>Led rigorous Root Cause Analysis to resolve a critical, high-frequency tube joint leakage issue. Because the product's design utilizes flare joints instead of standard O-rings, it inherently carries a higher risk of leakage. Experimented with altered torque values and redesigned fixtures before initiating advanced lab testing for tube mouth profile and hardness. Successfully identified microscopic finishing defects from the supplier’s end and collaborated with the Quality and Procurement teams to permanently rectify the supplier-side manufacturing defect.</li>
+								<li>Resolved persistent joystick calibration defects stemming from inadequate testing capabilities on the main assembly line. Coordinated with the assembly team to successfully implement an additional, dedicated intermediate station between End of Line and testing handovers. This ensured 100% accurate joystick calibration with proper testing protocols prior to final handover.</li>
+								<li>Engineered a stage-wise, Excel-based tracking system to monitor real-time testing progress across 11 distinct stations with cycle times ranging from 30 minutes to 4 hours, including paint fixes and component replacements. Overcame the challenge of limited manpower across multiple shifts by enabling precise daily planning and rapid defect resolution before Pre-Delivery Inspection. This tracking mechanism outperformed the Industrial Engineering team's estimated timelines, reducing overall testing and finishing time by 20% and successfully completing a single machine's process in just over 1.5 shifts compared to the allocated 2 full shifts.</li>
+							
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="projects.html" class="button large">View My Projects & Apps</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer HTML -->
+			<footer id="footer">
+				<section class="contact" style="text-align: center;">
+					<div style="display: inline-block; text-align: left;">
+						<p style="display: inline-block; margin-bottom: 0;">
+							Indore, Madhya Pradesh, India | 
+							<a href="tel:+919109968550">+91 9109968550</a> | 
+							<a href="mailto:anmoljoshi.contact@gmail.com">anmoljoshi.contact@gmail.com</a>
+						</p>
+					</div>
+				</section>
+			</footer>
+        </div>
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

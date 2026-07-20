@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Anmol Joshi - Portfolio & Apps</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+        
+		<style>
+			html { scroll-behavior: smooth; }
+			body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, .button { font-family: 'Poppins', sans-serif !important; }
+			:root {
+				--bg-dark: #0a1128; --bg-card: #162447; --text-main: #d3d9e9; --text-heading: #ffffff;
+				--accent: #00d2ff; --accent-hover: #3a86ff;
+			}
+			body, #wrapper { background-color: var(--bg-dark) !important; color: var(--text-main) !important; }
+			h1, h2, h3, h4, h5, h6, strong { color: var(--text-heading) !important; }
+			a { color: var(--accent) !important; text-decoration: none !important; border-bottom: none !important; transition: all 0.3s ease; }
+			a:hover { color: var(--accent-hover) !important; }
+			.button { border-radius: 30px !important; border: 2px solid var(--accent) !important; color: var(--accent) !important; box-shadow: none !important; font-size: 0.85rem !important; font-weight: 500 !important; }
+			.button:hover { background-color: var(--accent) !important; color: var(--bg-dark) !important; }
+			
+            /* Desktop Navigation */
+            #nav { background-color: #121e3c !important; border-top: 1px solid rgba(0, 210, 255, 0.2) !important; border-bottom: 1px solid rgba(0, 210, 255, 0.2) !important; }
+            #nav ul.links li a { font-size: 0.85rem !important; font-weight: 500; letter-spacing: 1.5px; padding: 0 1.5rem !important; }
+            #nav ul.links li.active a { background-color: rgba(0, 210, 255, 0.1) !important; color: var(--accent) !important; }
+            
+            /* 🚀 FIX: Force Nav Bar to stay visible on Half-Screen / Tablet 🚀 */
+            @media screen and (min-width: 650px) {
+                #nav { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+                a[href="#navPanel"] { display: none !important; } /* Hides Hamburger menu icon on half screens */
+            }
+
+            /* Mobile Nav Panel Fixes (Only for very small phones) */
+            @media screen and (max-width: 649px) {
+                a[href="#navPanel"] { color: #ffffff !important; }
+                a[href="#navPanel"]:before { color: #ffffff !important; } /* Makes hamburger icon white */
+                #navPanel { background-color: var(--bg-dark) !important; }
+                #navPanel .link { color: var(--text-heading) !important; }
+                #navPanel .link.active { color: var(--accent) !important; }
+            }
+
+			#main { background-color: transparent !important; }
+			
+			/* Tabs Styling with White Font */
+			.tabs-container { text-align: center; margin-bottom: 3rem; }
+			.tab-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+			
+			.tab-btn { 
+				background: transparent !important; 
+				border: 2px solid var(--accent) !important; 
+				color: #ffffff !important; /* Inactive tab ka text pure white karega */
+				padding: 0.8rem 2.5rem !important; 
+				border-radius: 30px !important; 
+				cursor: pointer !important; 
+				font-family: 'Poppins', sans-serif !important; 
+				font-weight: 600 !important; 
+				font-size: 1rem !important; 
+				letter-spacing: 1px !important; 
+				transition: all 0.3s ease !important;
+				display: inline-flex !important; 
+				align-items: center !important; /* Text ko vertically center karega */
+				justify-content: center !important; /* Text ko horizontally center karega */
+				height: auto !important; /* Template ki default height ko override karega */
+				line-height: normal !important; /* Template ki line-height ko fix karega */
+			}
+			.tab-btn:hover { box-shadow: 0 0 15px rgba(0, 210, 255, 0.4) !important; }
+			
+			.tab-btn.active { 
+				background: var(--accent) !important; 
+				color: #0a1128 !important; /* Active tab me bright background par dark text */
+			}
+
+			.tab-content { display: none; animation: fadeIn 0.5s; }
+			.tab-content.active { display: block; }
+			@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+			/* Project Cards inside Tabs */
+			.posts article { background-color: var(--bg-card) !important; border: 1px solid rgba(255,255,255,0.05); padding: 2rem !important; transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 12px; margin-bottom: 2rem; }
+			.posts article:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); border-color: rgba(0, 210, 255, 0.3); }
+			
+			#footer { background-color: #121e3c !important; }
+            /* Remove default horizontal line from date/tech tags */
+            header .date::before, header .date::after {
+                display: none !important;
+            }
+
+            /* Force 2-column Grid for Projects */
+			.posts { 
+				display: grid !important; 
+				grid-template-columns: repeat(2, 1fr) !important; 
+				gap: 2rem !important; 
+			}
+			.posts article { 
+				margin-bottom: 0 !important; 
+				width: 100% !important; 
+				float: none !important;
+			}
+			
+			/* Mobile screen par wapas 1 column karne ke liye */
+			@media screen and (max-width: 800px) {
+				.posts { 
+					grid-template-columns: 1fr !important; 
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper" class="fade-in">
+
+			<!-- Header -->
+			<header id="header" style="padding-top: 4rem; padding-bottom: 2rem; text-align: center;">
+				<h1 style="font-size: 3rem; color: var(--text-heading);">My Portfolio</h1>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home (Profile & Exp)</a></li>
+					<li class="active"><a href="projects.html">Portfolio (Projects & Apps)</a></li>
+				</ul>
+                <ul class="icons">
+                    <li><a href="http://www.linkedin.com/in/anmolj19" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/Anmoljoshi19" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+				<div class="tabs-container">
+					<!-- Tab Buttons -->
+					<div class="tab-buttons">
+						<button class="tab-btn active" onclick="openTab(event, 'AnalyticsTab')">Analytics Projects</button>
+						<button class="tab-btn" onclick="openTab(event, 'AppsTab')">Applications & Websites</button>
+					</div>
+
+					<!-- Tab 1: Analytics Projects -->
+					<div id="AnalyticsTab" class="tab-content active">
+						<section class="posts">
+							<!-- Project 1: Ola -->
+							<article>
+								<header>
+									<span class="date" style="color: var(--accent);">MySQL & PowerBI</span>
+									<h2><a href="ola-project.html">Ola Bookings Analysis</a></h2>
+								</header>
+								<a href="ola-project.html" class="image fit" style="border-radius: 8px; overflow: hidden;"><img src="images/Ola_image.png" alt="" /></a>
+								<p>Analyzed 100,000 ride-booking records using SQL and Power BI to uncover insights into revenue and customer behavior.</p>
+								<ul class="actions special">
+									<li><a href="ola-project.html" class="button">See Detailed Analysis</a></li>
+								</ul>
+							</article>
+
+							<!-- Project 2: Myntra -->
+							<article>
+								<header>
+									<span class="date" style="color: var(--accent);">MySQL & PowerBI</span>
+									<h2><a href="myntra-project.html">Myntra Trend Analysis</a></h2>
+								</header>
+								<a href="myntra-project.html" class="image fit" style="border-radius: 8px; overflow: hidden;"><img src="images/Myntra_image.png" alt="" /></a>
+								<p>Extracted actionable insights on pricing strategies and brand performance to drive business growth.</p>
+								<ul class="actions special">
+									<li><a href="myntra-project.html" class="button">See Detailed Analysis</a></li>
+								</ul>
+							</article>
+
+                            <!-- Project 3: Netflix -->
+							<article>
+								<header>
+									<span class="date" style="color: var(--accent);">MySQL & MS Excel</span>
+									<h2><a href="netflix-project.html">Netflix Content Strategy</a></h2>
+								</header>
+								<a href="netflix-project.html" class="image fit" style="border-radius: 8px; overflow: hidden;"><img src="images/Netflix_image.png" alt="Netflix Data" /></a>
+								<p>Cleaned and structured Netflix content data in MySQL to uncover trends in genres, ratings, and global content distribution.</p>
+								<ul class="actions special">
+									<li><a href="netflix-project.html" class="button">See Detailed Analysis</a></li>
+								</ul>
+							</article>
+
+                            <!-- Project 4: Motorcycle Sales -->
+                            <article>
+								<header>
+									<span class="date" style="color: var(--accent);">MySQL & PowerBI</span>
+									<h2><a href="motorcycle-project.html">Motorcycle Sales Analysis</a></h2>
+								</header>
+								<a href="motorcycle-project.html" class="image fit" style="border-radius: 8px; overflow: hidden;"><img src="images/Motorcycle_image.png" alt="Motorcycle Sales Data" /></a>
+								<p>Standardized and analyzed motorcycle sales data across India. Provided business-driven recommendations aimed at optimizing inventory and enhancing sales.</p>
+								<ul class="actions special">
+									<li><a href="motorcycle-project.html" class="button">See Detailed Analysis</a></li>
+								</ul>
+							</article>
+						</section>
+					</div>
+
+
+					<!-- Tab 2: Applications & Websites -->
+					<div id="AppsTab" class="tab-content">
+						<section class="posts">
+							<article>
+								<header>
+									<span class="date" style="color: var(--accent);">Python, Streamlit & Apps Script</span>
+									<h2><a href="website.html">Service Operations Dashboard</a></h2>
+								</header>
+								<a href="website.html" class="image fit" style="border-radius: 8px; overflow: hidden;">
+									<img src="images/service/service-1.png" alt="Service Operations Dashboard" />
+								</a>
+								<p>An integrated workshop management system providing real-time insights on live vehicle tracking, CRM, parts inventory, and revenue analytics.</p>
+								<ul class="actions special">
+									<li><a href="website.html" class="button">See Detailed Analysis</a></li>
+								</ul>
+							</article>
+
+							<article>
+								<header>
+									<span class="date" style="color: var(--accent);">Python & AI Tools</span>
+									<h2><a href="project-details.html">Digital Job Card Creator</a></h2>
+								</header>
+								<a href="project-details.html" class="image fit" style="border-radius: 8px; overflow: hidden; background: #000; padding: 2rem; text-align: center;"><h3 style="color:#fff;"></h3></a>
+								<p>A custom application allowing Service Advisors to input a VIN and instantly pull history, document issues, and email customers.</p>
+								<ul class="actions special">
+									<li><a href="project-details.html" class="button">See Detailed Analysis</a></li>
+								</ul>
+							</article>
+						</section>
+					</div>
+				</div>
+				
+				<!-- Back to Home Button -->
+				<div style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+					<a href="index.html" class="button large icon solid fa-home">Back to Home</a>
+				</div>
+				
+			</div>
+
+			<footer id="footer">
+				<section class="contact" style="text-align: center;">
+					<div style="display: inline-block; text-align: left;">
+						<p style="display: inline-block; margin-bottom: 0;">
+							Indore, Madhya Pradesh, India | 
+							<a href="tel:+919109968550">+91 9109968550</a> | 
+							<a href="mailto:anmoljoshi.contact@gmail.com">anmoljoshi.contact@gmail.com</a>
+						</p>
+					</div>
+				</section>
+			</footer>
+        </div>
+		
+		<!-- Tab Logic Script -->
+		<script>
+			function openTab(evt, tabName) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tab-content");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+					tabcontent[i].classList.remove("active");
+				}
+				tablinks = document.getElementsByClassName("tab-btn");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].classList.remove("active");
+				}
+				document.getElementById(tabName).style.display = "block";
+				document.getElementById(tabName).classList.add("active");
+				evt.currentTarget.classList.add("active");
+			}
+		</script>
+		
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

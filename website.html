@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Service Operations Dashboard - Anmol Joshi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			:root { --bg-dark: #0a1128; --accent: #00d2ff; }
+			body { background-color: var(--bg-dark) !important; font-family: 'Poppins', sans-serif !important; }
+			.section-title { color: var(--accent) !important; margin: 3rem 0 1.5rem 0; border-bottom: 2px solid var(--accent); display: inline-block; }
+			
+			/* Updated Grid & Description Styling */
+			.image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+			.image-box { border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 12px; overflow: hidden; background: #162447; padding: 20px; transition: transform 0.3s; }
+			.image-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+			
+			/* Image Hover Effect */
+			.image-box img { width: 100%; display: block; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+			.image-box img:hover { opacity: 0.8; }
+			
+			/* Detailed Text Formatting */
+			.image-box h4 { color: #ffffff; margin: 20px 0 10px 0; font-size: 1.2rem; }
+			.image-box p { margin: 0; font-size: 0.95rem; text-align: left; color: #a0a8b8; line-height: 1.6; }
+			
+			.button { border-radius: 30px !important; margin-top: 3rem; }
+
+			/* Lightbox (Zoom Image) CSS */
+			#lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(10, 17, 40, 0.95); text-align: center; }
+			#lightbox img { max-width: 90%; max-height: 90vh; margin-top: 3vh; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 210, 255, 0.3); }
+			#lightbox .close { position: absolute; top: 25px; right: 35px; color: var(--accent); font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+			#lightbox .close:hover { color: #ffffff; }
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper" style="padding: 2rem;">
+			<header style="text-align: center;">
+				<h1>Service Operations Dashboard</h1>
+				<p>A comprehensive system for tracking workshop efficiency and business performance.</p>
+			</header>
+
+			<!-- 1. Intro -->
+			<h2 class="section-title">1. System Entry</h2>
+			<div class="image-grid">
+				<div class="image-box">
+					<!-- Image pe click lagaya hai zoom ke liye -->
+					<img src="images/service/service-1.png" alt="Intro" onclick="openLightbox(this.src)">
+					<h4>Gateway Portal</h4>
+					<p>1</p>
+				</div>
+			</div>
+
+			<!-- 2. Shop Floor -->
+			<h2 class="section-title">2. Shop Floor Vehicle Status</h2>
+			<div class="image-grid">
+				<div class="image-box">
+					<img src="images/service/service-2.png" alt="Floor" onclick="openLightbox(this.src)">
+					<h4>Live Vehicle Tracking</h4>
+					<p>2</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/service-3.png" alt="Floor" onclick="openLightbox(this.src)">
+					<h4>Workshop Status Overview</h4>
+					<p>3</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/service-4.png" alt="Floor" onclick="openLightbox(this.src)">
+					<h4>Floor Operational Metrics</h4>
+					<p>4</p>
+				</div>
+			</div>
+
+			<!-- 3. CRM -->
+			<h2 class="section-title">3. CRM Portal</h2>
+			<div class="image-grid">
+				<div class="image-box">
+					<img src="images/service/Service-5.png" alt="CRM" onclick="openLightbox(this.src)">
+					<h4>Customer Interaction Management</h4>
+					<p>5.</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/service-6.png" alt="CRM" onclick="openLightbox(this.src)">
+					<h4>Service Follow-up Logs</h4>
+					<p>6</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/service-7.png" alt="CRM" onclick="openLightbox(this.src)">
+					<h4>CRM Portal Overview</h4>
+					<p>7</p>
+				</div>
+			</div>
+
+			<!-- 4. KPI Dashboards -->
+			<h2 class="section-title">4. Performance Dashboards</h2>
+			<div class="image-grid">
+				<div class="image-box">
+					<img src="images/service/Service-8.png" alt="KPI" onclick="openLightbox(this.src)">
+					<h4>Real-time KPI Tracking</h4>
+					<p>8</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/Service-9.png" alt="KPI" onclick="openLightbox(this.src)">
+					<h4>Performance Analytics</h4>
+					<p>9</p>
+				</div>
+			</div>
+
+			<!-- 5. Parts -->
+			<h2 class="section-title">5. Parts & Inventory</h2>
+			<div class="image-grid">
+				<div class="image-box">
+					<img src="images/service/Service-10.png" alt="Parts" onclick="openLightbox(this.src)">
+					<h4>Inventory Status</h4>
+					<p>10</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/Service-11.png" alt="Parts" onclick="openLightbox(this.src)">
+					<h4>Spare Parts Usage</h4>
+					<p>11</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/Service-12.png" alt="Parts" onclick="openLightbox(this.src)">
+					<h4>Stock Forecasting</h4>
+					<p>12</p>
+				</div>
+			</div>
+
+			<!-- 6. Sales/Revenue -->
+			<h2 class="section-title">6. Sales & Revenue Analysis</h2>
+			<div class="image-grid">
+				<div class="image-box">
+					<img src="images/service/Service-13.png" alt="Sales" onclick="openLightbox(this.src)">
+					<h4>Vehicle Sales Info</h4>
+					<p>13</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/Service-14.png" alt="Rev" onclick="openLightbox(this.src)">
+					<h4>Revenue Overview</h4>
+					<p>14</p>
+				</div>
+				<div class="image-box">
+					<img src="images/service/service-15.png" alt="Rev" onclick="openLightbox(this.src)">
+					<h4>Financial Performance Insights</h4>
+					<p>15</p>
+				</div>
+			</div>
+
+			<div style="text-align: center;">
+				<a href="projects.html" class="button">Back to Portfolio</a>
+			</div>
+		</div>
+
+		<!-- Lightbox Container (Zoom UI) -->
+		<div id="lightbox" onclick="closeLightbox()">
+			<span class="close" onclick="closeLightbox()">&times;</span>
+			<img id="lightbox-img" src="" alt="Enlarged Project Image">
+		</div>
+
+		<!-- Script for Lightbox -->
+		<script>
+			function openLightbox(imageSrc) {
+				document.getElementById('lightbox-img').src = imageSrc;
+				document.getElementById('lightbox').style.display = 'block';
+			}
+			function closeLightbox() {
+				document.getElementById('lightbox').style.display = 'none';
+			}
+		</script>
+	</body>
+</html>

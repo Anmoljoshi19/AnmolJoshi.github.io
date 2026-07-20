@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Myntra Trend Analysis - Anmol Joshi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<style>
+			html { scroll-behavior: smooth; }
+			body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, .button { font-family: 'Poppins', sans-serif !important; }
+			:root {
+				--bg-dark: #0a1128; --bg-card: #162447; --text-main: #d3d9e9; --text-heading: #ffffff;
+				--accent: #00d2ff; --accent-hover: #3a86ff;
+			}
+			body, #wrapper { background-color: var(--bg-dark) !important; color: var(--text-main) !important; }
+			h1, h2, h3, h4, h5, h6, strong { color: var(--text-heading) !important; }
+			a { color: var(--accent) !important; text-decoration: none !important; border-bottom: none !important; transition: all 0.3s ease; }
+			a:hover { color: var(--accent-hover) !important; }
+			.button { border-radius: 30px !important; border: 2px solid var(--accent) !important; color: var(--accent) !important; box-shadow: none !important; font-size: 0.85rem !important; font-weight: 500 !important;}
+			.button:hover { background-color: var(--accent) !important; color: var(--bg-dark) !important; }
+			
+			#nav { background-color: #121e3c !important; border-top: 1px solid rgba(0, 210, 255, 0.2) !important; border-bottom: 1px solid rgba(0, 210, 255, 0.2) !important; }
+			#nav ul.links li a { font-size: 0.85rem !important; font-weight: 500; letter-spacing: 1.5px; padding: 0 1.5rem !important; }
+			#nav ul.links li.active a { background-color: rgba(0, 210, 255, 0.1) !important; color: var(--accent) !important; }
+			
+			@media screen and (min-width: 650px) {
+				#nav { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+				a[href="#navPanel"] { display: none !important; }
+			}
+			@media screen and (max-width: 649px) {
+				a[href="#navPanel"] { color: #ffffff !important; }
+				a[href="#navPanel"]:before { color: #ffffff !important; }
+				#navPanel { background-color: var(--bg-dark) !important; }
+				#navPanel .link { color: var(--text-heading) !important; }
+				#navPanel .link.active { color: var(--accent) !important; }
+			}
+			
+			#main { background-color: transparent !important; }
+			.post { background-color: var(--bg-card) !important; border-radius: 16px !important; box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important; padding: 3rem !important; margin-top: 2rem;}
+			
+			header .date::before, header .date::after { display: none !important; }
+			.project-content h3 { color: var(--accent) !important; margin-top: 2rem; margin-bottom: 1rem; }
+			.project-content p, .project-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-main); }
+			.project-content ul { padding-left: 2rem; margin-bottom: 2rem; }
+			.project-image { width: 100%; border-radius: 12px; margin-bottom: 2rem; border: 1px solid rgba(0, 210, 255, 0.2); }
+			
+			.dashboard-gallery { display: flex; overflow-x: auto; gap: 1.5rem; padding-bottom: 1rem; margin-bottom: 2rem; scroll-snap-type: x mandatory; }
+			.dashboard-gallery img { flex: 0 0 auto; height: 280px; border-radius: 8px; border: 1px solid rgba(0, 210, 255, 0.2); scroll-snap-align: start; transition: transform 0.3s ease; }
+			.dashboard-gallery img:hover { transform: scale(1.02); }
+			.dashboard-gallery::-webkit-scrollbar { height: 8px; }
+			.dashboard-gallery::-webkit-scrollbar-track { background: rgba(0, 210, 255, 0.05); border-radius: 4px; }
+			.dashboard-gallery::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+			@media screen and (max-width: 768px) { .dashboard-gallery img { height: 200px; } }
+
+			#footer { background-color: #121e3c !important; }
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper" class="fade-in">
+
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home (Profile & Exp)</a></li>
+					<li class="active"><a href="projects.html">Portfolio (Projects & Apps)</a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<article class="post">
+					<header class="major" style="text-align: center; margin-bottom: 3rem;">
+						<span class="date" style="color: var(--accent); font-weight: 600; letter-spacing: 2px;">MySQL & PowerBI</span>
+						<h1 style="margin-top: 0.5rem;">Myntra Fashion Trend Analysis</h1>
+					</header>
+					
+					<div class="project-content">
+						<img src="images/Myntra_image.png" alt="Myntra Project" class="project-image" />
+						
+						<h3>About The Project</h3>
+						<p>This project contains comprehensive SQL scripts for analyzing a massive dataset of Myntra's fashion clothing items, focusing on extracting actionable insights for business growth and retail trend forecasting.</p>
+						
+						<h3>Key Insights Extracted</h3>
+						<ul>
+							<li>Indian Wear was the top-performing category, followed by Bottom Wear and Topwear, indicating strong customer demand for ethnic and casual fashion.</li>
+							<li>Puma emerged as the highest-performing brand, with HERE&NOW and HRX also contributing significantly to sales.</li>
+							<li>The platform featured 199,999 products with an average customer rating of 3.9/5, reflecting overall positive customer satisfaction.</li>
+							<li>Products offered discounts of up to 90%, demonstrating the importance of promotional pricing in driving customer purchases.</li>
+							<li>Gender-wise analysis revealed varying preferences across product categories, providing valuable insights for targeted marketing, inventory planning, and personalized recommendations.</li>
+						
+						</ul>
+
+						<h3 style="margin-top: 3rem;">Dashboard Screenshots</h3>
+						<div class="dashboard-gallery">
+							<!-- Yaha apni Myntra images ke path daal dena -->
+							<img src="images/myntra/myntra-1.png" alt="Dashboard 1" />
+							
+						</div>
+					</div>
+
+					<ul class="actions special" style="margin-top: 3rem;">
+						<li><a href="index.html" class="button">Back to Home</a></li>
+						<li><a href="projects.html" class="button">Back to Portfolio</a></li>
+						<li><a href="https://github.com/Anmoljoshi19/Myntra_trend_analysis" target="_blank" class="button">View Source Code (GitHub)</a></li>
+					</ul>
+				</article>
+			</div>
+
+			<footer id="footer">
+				<section class="contact" style="text-align: center;">
+					<div style="display: inline-block; text-align: left;">
+						<p style="display: inline-block; margin-bottom: 0;">
+							Indore, Madhya Pradesh, India | 
+							<a href="tel:+919109968550">+91 9109968550</a> | 
+							<a href="mailto:anmoljoshi.contact@gmail.com">anmoljoshi.contact@gmail.com</a>
+						</p>
+					</div>
+				</section>
+			</footer>
+        </div>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
