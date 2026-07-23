@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Digital Job Card App</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			:root { --bg-dark: #0a1128; --accent: #00d2ff; }
+			body { background-color: var(--bg-dark) !important; font-family: 'Poppins', sans-serif !important; }
+			
+			/* Premium Header Style */
+			.main-header { text-align: center; margin-bottom: 4rem; padding: 2rem 0; border-bottom: 1px solid rgba(0, 210, 255, 0.1); }
+			.main-header h1 { font-size: 3rem; font-weight: 700; background: linear-gradient(90deg, #00d2ff, #3a86ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
+			.main-header p { font-size: 1.1rem; color: #a0a8b8; max-width: 700px; margin: 0 auto; font-weight: 300; letter-spacing: 1px; }
+			
+			.section-title { color: var(--accent) !important; margin: 3rem 0 1.5rem 0; border-bottom: 2px solid var(--accent); display: inline-block; }
+			
+			/* Grid & Description Styling */
+			.image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+			.image-box { border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 12px; overflow: hidden; background: #162447; padding: 20px; transition: transform 0.3s; }
+			.image-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+			
+			/* Image Hover Effect */
+			.image-box img { width: 100%; display: block; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+			.image-box img:hover { opacity: 0.8; }
+			
+			/* Detailed Text Formatting */
+			.image-box h4 { color: #ffffff; margin: 20px 0 10px 0; font-size: 1.2rem; }
+			.image-box p { margin: 0; font-size: 0.95rem; text-align: left; color: #a0a8b8; line-height: 1.6; }
+			
+			.button { border-radius: 30px !important; margin-top: 3rem; }
+
+			/* Lightbox (Zoom Image) CSS */
+			#lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(10, 17, 40, 0.95); text-align: center; }
+			#lightbox img { max-width: 90%; max-height: 90vh; margin-top: 3vh; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 210, 255, 0.3); }
+			#lightbox .close { position: absolute; top: 25px; right: 35px; color: var(--accent); font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+			#lightbox .close:hover { color: #ffffff; }
+
+			.tech-stack { color: var(--accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1rem; display: block; text-align: center;}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper" style="padding: 2rem;">
+			
+			<header class="main-header" style="padding-left: 2rem; padding-right: 2rem;">
+    <span class="tech-stack">Google Sheets | Forms | Apps Script</span>
+    <h1>Digital Job Card Creator</h1>
+    <!-- Maine yahan style add kiya he full width aur proper alignment ke liye -->
+    <p style="max-width: 100%; width: 100%; margin: 2rem 0; text-align: justify; line-height: 1.8;">
+        This is an automated, end-to-end workshop management tool built using Google Workspace to completely digitize the vehicle intake process. The workflow begins with a smart VIN lookup that instantly fetches customer details and active recall campaigns using just the last 7 digits. Service Advisors then systematically log vehicle specifications, automated service due intervals, customer complaints, and cost estimates. To ensure total transparency, the application captures comprehensive visual evidence, including 360-degree photos and pre-existing damage. Upon submission, all data is instantly routed to a centralized Google Sheet, triggering a custom Google Apps Script that automatically generates a professional digital job card and emails it directly to the customer for formal approval, transforming manual paperwork into a seamless, error-free digital experience.
+    </p>
+</header>
+
+			<!-- 1. Digital Service Punch-In -->
+			<h2 class="section-title">1. Digital Service Punch-In</h2>
+			<div class="image-grid" style="display: flex; justify-content: flex-start;">
+				
+				<!-- Horizontal Box (Image - Text - Image) -->
+				<div class="image-box" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; max-width: 1500px; width: 100%; padding: 30px; text-align: left;">
+					
+					<!-- Left Image (1.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/1.jpg" alt="VIN Search Step 1" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+					<!-- Middle Text Area -->
+					<div style="flex: 1; min-width: 250px;">
+						<h4 style="margin-top: 0; font-size: 1.5rem;">Instant VIN Lookup & Verification</h4>
+						<p style="font-size: 1.05rem; line-height: 1.6;">By simply entering the last 7 digits of a vehicle's VIN, the system queries the backend database to instantly fetch the complete 17-digit VIN, customer name, and registered contact details. It proactively alerts the Service Advisor to any active recall campaigns right at the job card opening stage, while also allowing them to seamlessly update the customer's phone number or email directly on the spot.</p>
+					</div>
+
+					<!-- Right Image (2.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/2.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+				</div>
+			</div>
+
+            <!-- 2. Customer Details -->
+			<h2 class="section-title"></h2>
+			<div class="image-grid" style="display: flex; justify-content: flex-start;">
+				
+				<!-- Horizontal Box (Image - Text - Image) -->
+				<div class="image-box" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; max-width: 1500px; width: 100%; padding: 30px; text-align: left;">
+					
+					<!-- Left Image (3.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/3.jpg" alt="VIN Search Step 1" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+					<!-- Middle Text Area -->
+					<div style="flex: 1; min-width: 250px;">
+						<h4 style="margin-top: 0; font-size: 1.5rem;">Bike Details</h4>
+						<p style="font-size: 1.05rem; line-height: 1.6;">Here, additional vehicle details are systematically recorded. The advisor selects the bike variant (Core or Smart) and model from dropdown lists, then inputs the bike's color and current odometer reading. Right below this is a 'Bike not starting (Odo not visible)' checkbox, which can be selected if the motorcycle is dead and the exact odometer reading cannot be retrieved.</p>
+					</div>
+
+					<!-- Right Image (4.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/4.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+                    
+                    <!-- Right Image (5.jpg) -->
+                    <div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/5.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+				</div>
+			</div>
+
+            <!-- 3. Service Type & Advisor Name -->
+			<h2 class="section-title"></h2>
+			<div class="image-grid" style="display: flex; justify-content: flex-start;">
+				
+				<!-- Horizontal Box (Image - Text - Image) -->
+				<div class="image-box" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; max-width: 1500px; width: 100%; padding: 30px; text-align: left;">
+					
+					<!-- Left Image (3.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/6.jpg" alt="VIN Search Step 1" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+					<!-- Middle Text Area -->
+					<div style="flex: 1; min-width: 250px;">
+						<h4 style="margin-top: 0; font-size: 1.5rem;">Service Type & Advisor Name</h4>
+						<p style="font-size: 1.05rem; line-height: 1.6;">In this section, the Service Advisor specifies the type of work required for the incoming motorcycle. If 'Service' is selected, the application automatically detects and displays which specific service interval is due. Following this, the advisor selects their name to log the transaction.</p>
+					</div>
+
+					<!-- Right Image (4.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/7.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+                    
+                    <!-- Right Image (5.jpg) -->
+                    <div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/8.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+				</div>
+			</div>
+
+            <!-- 4. Addition Details -->
+			<h2 class="section-title"></h2>
+			<div class="image-grid" style="display: flex; justify-content: flex-start;">
+				
+				<!-- Horizontal Box (Image - Text - Image) -->
+				<div class="image-box" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; max-width: 1500px; width: 100%; padding: 30px; text-align: left;">
+					
+					<!-- Left Image (3.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/9.jpg" alt="VIN Search Step 1" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+					<!-- Middle Text Area -->
+					<div style="flex: 1; min-width: 250px;">
+						<h4 style="margin-top: 0; font-size: 1.5rem;">Additional Details</h4>
+						<p style="font-size: 1.05rem; line-height: 1.6;">In the 'Additional Details' section, the Service Advisor thoroughly documents the customer's reported issues and the exact scope of work to be performed. This section also includes dedicated fields to input a preliminary cost estimate, log any special remarks (such as pre-installed aftermarket accessories), and set a promised delivery date for the customer.</p>
+					</div>
+
+					<!-- Right Image (4.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/10.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+                    
+                    <!-- Right Image (5.jpg) -->
+                    <div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/11.jpg" alt="VIN Search Step 2" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- 4. Capture Photos -->
+			<h2 class="section-title"></h2>
+			<div class="image-grid" style="display: flex; justify-content: flex-start;">
+				
+				<!-- Horizontal Box (Image - Text - Image) -->
+				<div class="image-box" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; max-width: 1500px; width: 100%; padding: 30px; text-align: left;">
+					
+					<!-- Left Image (3.jpg) -->
+					<div style="max-width: 260px; width: 100%; flex-shrink: 0;">
+						<img src="images/Jobcard App/12.jpg" alt="VIN Search Step 1" onclick="openLightbox(this.src)" style="width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+					</div>
+					
+					<!-- Middle Text Area -->
+					<div style="flex: 1; min-width: 250px;">
+						<h4 style="margin-top: 0; font-size: 1.5rem;">Capturing Photos</h4>
+						<p style="font-size: 1.05rem; line-height: 1.6;">In the final Visual Inspection section, the advisor captures comprehensive photographic evidence, including 360-degree views of the motorcycle, odometer readings, brake pad conditions, and any pre-existing damage. Upon clicking 'Submit', all logged data is instantly routed to a centralized Google Sheet. A backend Google Apps Script then takes over, automatically generating a customized digital job card and emailing it directly to the customer for their review and formal approval.</p>
+					</div>			
+				</div>
+			</div>
+
+		<!-- Lightbox Container (Zoom UI) -->
+		<div id="lightbox" onclick="closeLightbox()">
+			<span class="close" onclick="closeLightbox()">&times;</span>
+			<img id="lightbox-img" src="" alt="Enlarged Project Image">
+		</div>
+
+		<!-- Script for Lightbox -->
+		<script>
+			function openLightbox(imageSrc) {
+				document.getElementById('lightbox-img').src = imageSrc;
+				document.getElementById('lightbox').style.display = 'block';
+			}
+			function closeLightbox() {
+				document.getElementById('lightbox').style.display = 'none';
+			}
+		</script>
+	</body>
+</html>
